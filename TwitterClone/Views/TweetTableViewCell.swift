@@ -67,7 +67,7 @@ class TweetTableViewCell: UITableViewCell {
         
         NSLayoutConstraint.activate(avatarImageViewConstraints)
         NSLayoutConstraint.activate(displayNameLabelConstraints)
-        NSLayoutConstraint.activate(userNameLabelConstraints)
+//        NSLayoutConstraint.activate(userNameLabelConstraints)
     }
     
     required init?(coder: NSCoder) {
