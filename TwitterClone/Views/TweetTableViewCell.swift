@@ -62,12 +62,12 @@ class TweetTableViewCell: UITableViewCell {
         
         let userNameLabelConstraints = [
             userNameLabel.leadingAnchor.constraint(equalTo: displayNameLabel.trailingAnchor, constant: 10),
-            userNameLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
+            userNameLabel.centerYAnchor.constraint(equalTo: displayNameLabel.centerYAnchor)
         ]
         
         NSLayoutConstraint.activate(avatarImageViewConstraints)
         NSLayoutConstraint.activate(displayNameLabelConstraints)
-//        NSLayoutConstraint.activate(userNameLabelConstraints)
+        NSLayoutConstraint.activate(userNameLabelConstraints)
     }
     
     required init?(coder: NSCoder) {
