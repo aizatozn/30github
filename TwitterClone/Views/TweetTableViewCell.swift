@@ -42,7 +42,7 @@ class TweetTableViewCell: UITableViewCell {
     
     private let tweetTextContentLabel: UILabel = {
         let label = UILabel()
-        label.text = "Hello everyone! Here ist my first tweet, my English perfect! English is my third language! And it's so good, that I can speak English, then here will be mooooore tweeters))!!!"
+        label.text = "Shakaaa))!!!"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         return label
