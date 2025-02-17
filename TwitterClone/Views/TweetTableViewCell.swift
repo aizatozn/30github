@@ -40,11 +40,20 @@ class TweetTableViewCell: UITableViewCell {
         return label
     }()
     
+    private let tweetTextContentLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Hello everyone! Here ist my first tweet, my English perfect! English is my third language! And it's so good, that I can speak English, then here will be mooooore tweeters))!!!"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        return label
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(avatarImageView)
         contentView.addSubview(displayNameLabel)
         contentView.addSubview(userNameLabel)
+        contentView.addSubview(tweetTextContentLabel)
         configureConstraints()
     }
     
@@ -62,13 +71,21 @@ class TweetTableViewCell: UITableViewCell {
         ]
         
         let userNameLabelConstraints = [
-            userNameLabel.leadingAnchor.constraint(equalTo: displayNameLabel.trailingAnchor, constant: 10),
+            userNameLabel.leadingAnchor.constraint(equalTo: displayNameLabel.leadingAnchor, constant: 10),
             userNameLabel.centerYAnchor.constraint(equalTo: displayNameLabel.centerYAnchor)
+        ]
+        
+        let tweetTextContentLabelConstraints = [
+            tweetTextContentLabel.leadingAnchor.constraint(equalTo: displayNameLabel.trailingAnchor),
+            tweetTextContentLabel.topAnchor.constraint(equalTo: displayNameLabel.bottomAnchor, constant: 10),
+            tweetTextContentLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
+            tweetTextContentLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15)
         ]
         
         NSLayoutConstraint.activate(avatarImageViewConstraints)
         NSLayoutConstraint.activate(displayNameLabelConstraints)
         NSLayoutConstraint.activate(userNameLabelConstraints)
+        NSLayoutConstraint.activate(tweetTextContentLabelConstraints)
     }
     
     required init?(coder: NSCoder) {
